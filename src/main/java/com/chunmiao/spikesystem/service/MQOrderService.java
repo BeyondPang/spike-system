@@ -19,7 +19,9 @@ public class MQOrderService {
      */
     @RabbitListener(queues = ORDER_QUEUE)
     public void createOrder(TOrder TOrder){
+        System.out.println("***********************************************************************");
         System.out.println("收到订单" + '\n' + "用户：" + TOrder.getOrderUser() + '\n' + "商品：" + TOrder.getOrderName());
+        System.out.println("***********************************************************************");
         orderService.createOrder(TOrder);
     }
 }

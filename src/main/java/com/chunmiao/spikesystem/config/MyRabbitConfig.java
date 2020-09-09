@@ -25,18 +25,6 @@ public class MyRabbitConfig {
      *  通过路由键绑定交换机和队列
      */
 
-    @Bean
-    public Exchange getStockExchange(){
-        return ExchangeBuilder.directExchange(STOCK_EXCHANG).build();
-    }
-    @Bean
-    public Queue getStockQueue(){
-        return QueueBuilder.nonDurable(STOCK_QUEUE).build();
-    }
-    @Bean
-    public Binding bindStock(){
-        return BindingBuilder.bind(getStockQueue()).to(getStockExchange()).with(STOCK_ROUTING_KEY).noargs();
-    }
 
     @Bean
     public Exchange getOrderExchange(){
@@ -49,5 +37,19 @@ public class MyRabbitConfig {
     @Bean
     public Binding bindOrder(){
         return BindingBuilder.bind(getStockQueue()).to(getStockExchange()).with(ORDER_ROUTING_KEY).noargs();
+    }
+
+
+    @Bean
+    public Exchange getStockExchange(){
+        return ExchangeBuilder.directExchange(STOCK_EXCHANG).build();
+    }
+    @Bean
+    public Queue getStockQueue(){
+        return QueueBuilder.nonDurable(STOCK_QUEUE).build();
+    }
+    @Bean
+    public Binding bindStock(){
+        return BindingBuilder.bind(getStockQueue()).to(getStockExchange()).with(STOCK_ROUTING_KEY).noargs();
     }
 }
