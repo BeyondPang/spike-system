@@ -1,4 +1,4 @@
-package com.chunmiao.spikesystem.domain;
+package com.chunmiao.mainsystem.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,24 +13,11 @@ import java.io.Serializable;
 /**
  * 订单实体类
  */
-//@Entity
-//@Data
-////@Builder
-//public class Order implements Serializable {
-//    @Id
-//    @GeneratedValue
-//    private Long id;
-//
-//    private String orderName;
-//
-//    private String orderUser;
-//}
-
-/**
- * 库存实体类
- */
 @Data
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class TOrder implements Serializable{
     @Id
     @GeneratedValue

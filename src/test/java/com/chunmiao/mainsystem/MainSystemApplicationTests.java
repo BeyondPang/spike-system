@@ -1,10 +1,10 @@
-package com.chunmiao.spikesystem;
+package com.chunmiao.mainsystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpikeSystemApplicationTests {
+class MainSystemApplicationTests {
 
     @Test
     void contextLoads() {

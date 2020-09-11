@@ -1,4 +1,4 @@
-package com.chunmiao.spikesystem.domain;
+package com.chunmiao.mainsystem.domain;
 
 import lombok.Data;
 
