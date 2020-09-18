@@ -31,6 +31,7 @@ public class Test {
         System.out.println("\n---------------------------------------------");
         System.out.println("秒杀用户：" + userName + "\n" + "秒杀商品： " + orderName);
         Long count = redisService.decrBy(orderName);
+        count = count >= 0 ? count : -1;
         // 秒杀成功
         System.out.println("当前商品数量为： " + (count + 1));
         if (count >= 0) {

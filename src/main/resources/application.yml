@@ -8,3 +8,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+#  redis 和 rabbitMQ用默认配置即可

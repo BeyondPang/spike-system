@@ -20,23 +20,32 @@ public class MyRabbitConfig {
     public final static String STOCK_ROUTING_KEY = "STOCK_ROUTING_KEY";
 
     /**
-     * 创建交换机
-     * 创建队列
-     * 通过路由键绑定交换机和队列
+     * 订单消息
+     * 1.创建交换机
+     * 2.创建队列
+     * 3.通过路由键绑定交换机和队列
      */
     @Bean
-    public Exchange getTOrderExchang(){
+    public Exchange getTOrderExchang() {
         return ExchangeBuilder.directExchange(TORDER_EXCHANG).build();
     }
+
     @Bean
-    public Queue getTOrderQueue(){
+    public Queue getTOrderQueue() {
         return QueueBuilder.nonDurable(TORDER_QUEUE).build();
     }
+
     @Bean
-    public Binding bindTOrder(){
+    public Binding bindTOrder() {
         return BindingBuilder.bind(getTOrderQueue()).to(getTOrderExchang()).with(TORDER_ROUTING_KEY).noargs();
     }
 
+    /**
+     * 库存消息
+     * 1.创建交换机
+     * 2.创建队列
+     * 3.通过路由键绑定交换机和队列
+     */
     @Bean
     public Exchange getStockExchange() {
         return ExchangeBuilder.directExchange(STOCK_EXCHANG).build();
